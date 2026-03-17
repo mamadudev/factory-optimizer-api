@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.projedata.factoryoptimizer.entity.ProductMaterial;
 import com.projedata.factoryoptimizer.entity.RawMaterial;
 import com.projedata.factoryoptimizer.repository.RawMaterialRepository;
 
@@ -15,12 +16,12 @@ public class RawMaterialController {
     private RawMaterialRepository repository;
 
     @GetMapping
-    public List<RawMaterial> getAll(){
+    public List<ProductMaterial> getAll(){
         return repository.findAll();
     }
 
     @GetMapping("/{id}")
-    public RawMaterial getById(@PathVariable Long id){
+    public ProductMaterial getById(@PathVariable Long id){
         return repository.findById(id).orElseThrow();
     }
 

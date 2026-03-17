@@ -18,9 +18,13 @@ public class ProductMaterialController {
     public List<ProductMaterial> getAll(){
         return repository.findAll();
     }
-
     @PostMapping
     public ProductMaterial create(@RequestBody ProductMaterial productMaterial){
         return repository.save(productMaterial);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
+        repository.deleteById(id);
     }
 }
