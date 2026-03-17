@@ -9,34 +9,41 @@ public class RawMaterial {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String code;
     private String name;
+    private Double quantity;
 
-    private Integer quantity;
-
-    public RawMaterial() {}
+    public RawMaterial(){}
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getName() {
         return name;
     }
 
-    public Integer getQuantity() {
-        return quantity;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
+    public Double getQuantity() {
+        return quantity;
     }
 
-    public void setId(Long id2) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setId'");
+    public void setQuantity(Double quantity) {
+        this.quantity = quantity;
     }
 }
